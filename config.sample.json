@@ -1,0 +1,26 @@
+{
+    "btc": {
+        "rpc-host": "localhost",
+        "rpc-user": "",
+        "rpc-password": "",
+        "rpc-port": "8332"
+    },
+    "emc": {
+        "rpc-host": "localhost",
+        "rpc-user": "",
+        "rpc-password": "",
+        "rpc-port": "6663"
+    },
+    "ness": {
+        "host": "localhost",
+        "port": "6422",
+        "wallet-id": "",
+        "wallet-password": "",
+        "addr-from": "",
+        "test-addr-from": "",
+        "test-addr-to": "",
+        "test-coins": "",
+        "test-hours": "",
+        "ratio": "1000000"
+    }
+}

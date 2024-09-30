@@ -1,0 +1,3 @@
+import run_test_bitcoin
+import run_test_emercoin
+import run_test_ness
