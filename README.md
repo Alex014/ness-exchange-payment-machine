@@ -1,1 +1,1 @@
-Inside
+This is an inside part of an exchange system (BTC -> NESS). This part is used to process olready created tokens.
