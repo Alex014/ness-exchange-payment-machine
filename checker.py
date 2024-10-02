@@ -29,7 +29,7 @@ class Checker:
     def check_token(self, token: dict):
         try:
             name = token['name'].split(':')
-            value = kson.loads(token['value'])
+            value = json.loads(token['value'])
             ness_addr = name[3]
             btc_addr = value['btc_addr']
             ratio = self.config['ness']['ratio']
@@ -45,13 +45,13 @@ class Checker:
                 return False
 
         except Exception as e:
-            exceptions[token['name']] = e
+            self.exceptions[token['name']] = str(e)
             return False
 
     def pay_token(self, token: dict):
         try:
             name = token['name'].split(':')
-            value = kson.loads(token['value'])
+            value = json.loads(token['value'])
             ness_addr_pay_from = self.config['ness']['addr-from']
             ness_addr = name[3]
             btc_addr = value['btc_addr']
@@ -66,7 +66,7 @@ class Checker:
             self.ness.send(ness_addr_pay_from, ness_addr, ness_pay_balance, ness_pay_balance)
 
         except Exception as e:
-            exceptions[token['name']] = e
+            self.exceptions[token['name']] = str(e)
             return False
 
     def process_tokens(self):
