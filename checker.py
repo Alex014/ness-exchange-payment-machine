@@ -36,6 +36,8 @@ class Checker:
             btc_balance = self.btc.checkAddr(btc_addr)
             ness_balance = self.ness.checkAddr(ness_addr)['predicted']['coins']
 
+            print(" * {:15} - BTC {}:{} NESS {}:{}".format(value['name'], btc_addr, btc_balance, ness_addr, ness_balance), flush=True)
+
             if btc_balance > 0:
                 if ness_balance == 0:
                     return True
@@ -45,7 +47,7 @@ class Checker:
                 return False
 
         except Exception as e:
-            self.exceptions[token['name']] = str(e)
+            self.exceptions[token['name']] = repr(e)
             return False
 
     def pay_token(self, token: dict):
@@ -65,8 +67,10 @@ class Checker:
 
             self.ness.send(ness_addr_pay_from, ness_addr, ness_pay_balance, ness_pay_balance)
 
+            print("\n + {:15} - {}: {} NESS\n".format(value['name'], ness_addr, ness_pay_balance), flush=True)
+
         except Exception as e:
-            self.exceptions[token['name']] = str(e)
+            self.exceptions[token['name']] = repr(e)
             return False
 
     def process_tokens(self):
