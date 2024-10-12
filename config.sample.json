@@ -9,11 +9,11 @@
         "rpc-host": "localhost",
         "rpc-user": "",
         "rpc-password": "",
-        "rpc-port": "6663"
+        "rpc-port": "6662"
     },
     "ness": {
         "host": "localhost",
-        "port": "6422",
+        "port": "6660",
         "wallet-id": "",
         "wallet-password": "",
         "addr-from": "",
